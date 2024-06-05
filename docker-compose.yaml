@@ -98,3 +98,17 @@ services:
       volumes:
           - ./jellyseerr/config:/config
       restart: unless-stopped
+  sabnzbd:
+    image: lscr.io/linuxserver/sabnzbd:latest
+    container_name: sabnzbd
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Jerusalem
+    volumes:
+      - ./sabnzbd/config:/config
+      - ../media:/downloads
+      - ../media/incomplete:/incomplete-downloads
+    ports:
+      - 8080:8080
+    restart: unless-stopped
