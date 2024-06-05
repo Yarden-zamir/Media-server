@@ -87,15 +87,14 @@ services:
     ports:
       - 8989:8989
     restart: unless-stopped
-  overseerr:
-    image: lscr.io/linuxserver/overseerr:latest
-    container_name: overseerr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Asia/Jerusalem
-    volumes:
-      - ./overseerr/config:/config
-    ports:
-      - 5055:5055
-    restart: unless-stopped
+  jellyseerr:
+      image: fallenbagel/jellyseerr:latest
+      container_name: jellyseerr
+      environment:
+          - LOG_LEVEL=debug
+          - TZ=Asia/Tashkent
+      ports:
+          - 5055:5055
+      volumes:
+          - /path/to/appdata/config:/app/config
+      restart: unless-stopped
