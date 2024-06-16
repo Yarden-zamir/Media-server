@@ -51,6 +51,7 @@ services:
     volumes:
       - ./sonarr/config:/config
       - ../media/tv:/tv
+      - ../media/tv-in:/tv-in
     ports:
       - 8989:8989
     restart: unless-stopped
