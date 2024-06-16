@@ -53,7 +53,7 @@ services:
       - PGID=1000
       - TZ=Asia/Jerusalem
       - NZBGET_USER=yarden #optional
-      - NZBGET_PASS=eFNMA #optional
+      - NZBGET_PASS=eFNMA19! #optional
     volumes:
       - ./nzbget/config:/config #optional
       - ../media:/downloads
